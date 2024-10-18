@@ -95,70 +95,120 @@ namespace Prototype
                 gproc.sqlCommand.Parameters.AddWithValue("@p_firstName", txtFirstname.Text);
                 gproc.sqlCommand.Parameters.AddWithValue("@p_lastName", txtLastname.Text);
                 gproc.sqlCommand.Parameters.AddWithValue("@p_birthdate", dtmBirthdate.Value.ToString("yyyy-MM-dd"));
-                gproc.sqlCommand.Parameters.AddWithValue("@p_gender", txtPassword.Text);
+                gproc.sqlCommand.Parameters.AddWithValue("@p_gender", cmbGender.Text);
                 gproc.sqlCommand.Parameters.AddWithValue("@p_image", imageLoc);
                 gproc.sqlCommand.ExecuteNonQuery();
+
                 MessageBox.Show("Record Successfully Registered.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                pnlLogin.Visible = true;
-                pnlSignup.Visible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Sign up failed. \n Error: " + ex.Message);
                 clearInputs();
             }
+
+            pnlLogin.Visible = true;
+            pnlSignup.Visible = false;
         }
 
         public void logIn()
         {
             userID = -1;
+
             try
             {
                 gproc.sqlHotelAdapter = new MySqlDataAdapter();
                 gproc.datHotel = new DataTable();
-
                 gproc.sqlCommand.Parameters.Clear();
+
                 gproc.sqlCommand.CommandText = "procAccountLogIn";
                 gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
                 gproc.sqlCommand.Parameters.AddWithValue("@p_username", txtUsername.Text);
                 gproc.sqlCommand.Parameters.AddWithValue("@p_password", txtPassword.Text);
-                MessageBox.Show("Log in successful.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
                 gproc.sqlHotelAdapter.Fill(gproc.datHotel);
 
                 if (gproc.datHotel.Rows.Count > 0)
                 {
-                    string result = gproc.datHotel.Rows[0]["id"].ToString();
-                    if (!string.IsNullOrEmpty(result))
-                    {
-                        userID = Convert.ToInt32(result); // Save the user ID
-                        MessageBox.Show($"Log in successful. User ID: {userID}", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    userID = Convert.ToInt32(gproc.datHotel.Rows[0]["id"].ToString());
 
-                        // Open the dashboard and hide the login form
-                        new FrmDashboard(userID).Show();
-                        this.Hide();
+                    if (IsTenant(userID))
+                    {
+                        ShowDashboard(userID);
+                    }
+                    else
+                    {
+                        AddTenant(userID);
+                        ShowDashboard(userID);
                     }
                 }
                 else
                 {
                     MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
-                gproc.sqlHotelAdapter.Dispose();
-                gproc.datHotel.Dispose();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Log in failed. \n Error: " + ex.Message);
-                txtUsername.Clear();
-                txtPassword.Clear();
+                MessageBox.Show($"Log in failed.\nError: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ClearFields();
+            }
+            finally
+            {
+                DisposeResources();
             }
         }
 
+        private bool IsTenant(int userID)
+        {
+            gproc.sqlCommand.Parameters.Clear();
+            gproc.sqlCommand.CommandText = "procCheckTenant";
+            gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+            gproc.sqlCommand.Parameters.AddWithValue("@p_id", userID);
+
+            gproc.datHotel = new DataTable();
+            gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
+            gproc.sqlHotelAdapter.Fill(gproc.datHotel);
+
+            return gproc.datHotel.Rows.Count > 0;
+        }
+
+        private void AddTenant(int userID)
+        {
+            gproc.sqlCommand.Parameters.Clear();
+            gproc.sqlCommand.CommandText = "procAddTenant";
+            gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+            gproc.sqlCommand.Parameters.AddWithValue("@p_accountid", userID);
+            gproc.sqlCommand.Parameters.AddWithValue("@p_membership", "Normal");
+
+            gproc.datHotel = new DataTable();
+            gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
+            gproc.sqlHotelAdapter.Fill(gproc.datHotel);
+        }
+
+        private void ShowDashboard(int userID)
+        {
+            MessageBox.Show($"Log in successful. User ID: {userID}", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            new FrmDashboard(userID).Show();
+            this.Hide();
+        }
+
+        private void ClearFields()
+        {
+            txtUsername.Clear();
+            txtPassword.Clear();
+        }
+
+        private void DisposeResources()
+        {
+            gproc.sqlHotelAdapter?.Dispose();
+            gproc.datHotel?.Dispose();
+        }
+
+
         public void clearInputs()
         {
-            txtUsername1.Clear();
+            txtUsername1.Text = "";
             txtPassword1.Clear();
             txtFirstname.Clear();
             txtLastname.Clear();
