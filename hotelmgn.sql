@@ -35,6 +35,17 @@ CREATE TABLE `tblaccount` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+/*Data for the table `tblaccount` */
+
+insert  into `tblaccount`(`id`,`username`,`password`,`email`,`address`,`contactNo`,`firstName`,`lastName`,`birthdate`,`gender`,`image`) values 
+(11,'z4ynu','zyot','zyhenzo@gmail.com','Tagum City','09324066029','Zy','Henzo','2003-06-04','Enter your pass','C:\\Users\\jazzy\\Downloads\\5c8b18a1d95fce3c7740bed1a49fd7fd.jpg'),
+(12,'zy','zy','zy','zy','zy','zy','zy','2020-02-26','Enter your pass','C:\\Users\\jazzy\\Downloads\\4d84bb59074bf2df411c9cb7f2f0ff2c.jpg'),
+(13,'Daijiro','mitty','kyrelleaquino@gmail.com','Tagum City','09156855768','Kyrelle Andre','Aquino','2005-11-15','mitty','C:\\Users\\jazzy\\OneDrive\\Pictures\\pfpo.jpg'),
+(14,'kashy','admin','kashtorino@gmail.com','Tagum City','09156855768','Kashmir','Torino','2004-05-14','Enter your pass','C:\\Users\\jazzy\\Downloads\\461330633_496289853331233_6372511773470926964_n.jpg'),
+(15,'eim','1234','kashtorino@gmail.com','Tagum City','09156855768','Kashmir','Torino','2004-05-14','Male','C:\\Users\\jazzy\\Downloads\\396532cad95b3bcffcf3159ef34ff3e1.jpg'),
+(16,'Soggy Cereal','4321','sostino@gmail.com','Mankilam','09123456789','Kyron','Sostino','2003-04-01','Male','C:\\Users\\jazzy\\Downloads\\4d84bb59074bf2df411c9cb7f2f0ff2c.jpg'),
+(17,'Space','kys','kyall@gmail.com','Ky City','09ky','Spacial','Kyron','2024-11-15','Male','C:\\Users\\jazzy\\Downloads\\snowy-mountain-peak-starry-galaxy-majesty-generative-ai.jpg');
+
 /*Table structure for table `tblaccount_addons` */
 
 DROP TABLE IF EXISTS `tblaccount_addons`;
@@ -50,6 +61,19 @@ CREATE TABLE `tblaccount_addons` (
   CONSTRAINT `tblaccount_addons_ibfk_1` FOREIGN KEY (`accountid`) REFERENCES `tblaccount` (`id`),
   CONSTRAINT `tblaccount_addons_ibfk_2` FOREIGN KEY (`addonsid`) REFERENCES `tbladdons` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `tblaccount_addons` */
+
+insert  into `tblaccount_addons`(`id`,`accountid`,`addonsid`,`addons_description`) values 
+(25,11,1,'Adds a high-quality foam.'),
+(26,13,1,'Adds a high-quality foam.'),
+(34,13,6,'Grants access to the hotel\'s gym.'),
+(35,13,4,'Adds additional towels.'),
+(37,14,2,'Adds an additional thick and comfortable blanket.'),
+(38,14,1,'Adds a high-quality foam.'),
+(39,14,5,'Grants access to all the pools in the hotel\'s vicinity.'),
+(40,17,2,'Adds an additional thick and comfortable blanket.'),
+(41,17,6,'Grants access to the hotel\'s gym.');
 
 /*Table structure for table `tblaccount_promo` */
 
@@ -67,6 +91,15 @@ CREATE TABLE `tblaccount_promo` (
   CONSTRAINT `tblaccount_promo_ibfk_2` FOREIGN KEY (`promoid`) REFERENCES `tblpromo` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+/*Data for the table `tblaccount_promo` */
+
+insert  into `tblaccount_promo`(`id`,`accountid`,`promoid`,`promo_description`) values 
+(1,11,1,'Join us this summer and have free access to the hotel\'s pool.'),
+(14,13,2,''),
+(15,14,3,''),
+(16,14,2,'Book 3 nights during the Christmas season and get a discount and a free breakfast for the whole duration of your stay.'),
+(18,17,3,'Stay 2 nights during the Halloween season and get a hefty discount.');
+
 /*Table structure for table `tbladdons` */
 
 DROP TABLE IF EXISTS `tbladdons`;
@@ -78,6 +111,16 @@ CREATE TABLE `tbladdons` (
   `description` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `tbladdons` */
+
+insert  into `tbladdons`(`id`,`name`,`price`,`description`) values 
+(1,'Extra foam/mattress',30,'Adds a high-quality foam.'),
+(2,'Extra blankets',10,'Adds an additional thick and comfortable blanket.'),
+(3,'Extra pillows',10,'Adds a pillow.'),
+(4,'Extra towels',5,'Adds additional towels.'),
+(5,'Pool Access',250,'Grants access to all the pools in the hotel\'s vicinity.'),
+(6,'Gym Access',100,'Grants access to the hotel\'s gym.');
 
 /*Table structure for table `tbladdons_promo` */
 
@@ -94,6 +137,14 @@ CREATE TABLE `tbladdons_promo` (
   KEY `accountid` (`accountid`),
   CONSTRAINT `tbladdons_promo_ibfk_3` FOREIGN KEY (`accountid`) REFERENCES `tblaccount` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `tbladdons_promo` */
+
+insert  into `tbladdons_promo`(`id`,`accountid`,`addonPrice`,`promoDiscount`) values 
+(2,13,135,20),
+(3,14,150,15),
+(4,14,290,35),
+(5,17,110,15);
 
 /*Table structure for table `tblbooking` */
 
@@ -118,6 +169,8 @@ CREATE TABLE `tblbooking` (
   CONSTRAINT `tblbooking_ibfk_3` FOREIGN KEY (`apid`) REFERENCES `tbladdons_promo` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+/*Data for the table `tblbooking` */
+
 /*Table structure for table `tblhotelroom` */
 
 DROP TABLE IF EXISTS `tblhotelroom`;
@@ -131,6 +184,8 @@ CREATE TABLE `tblhotelroom` (
   `initialPricePerDay` double NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `tblhotelroom` */
 
 /*Table structure for table `tblpersonnel` */
 
@@ -147,6 +202,8 @@ CREATE TABLE `tblpersonnel` (
   CONSTRAINT `tblpersonnel_ibfk_1` FOREIGN KEY (`accountid`) REFERENCES `tblaccount` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+/*Data for the table `tblpersonnel` */
+
 /*Table structure for table `tblpromo` */
 
 DROP TABLE IF EXISTS `tblpromo`;
@@ -160,6 +217,13 @@ CREATE TABLE `tblpromo` (
   `dateExpiry` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `tblpromo` */
+
+insert  into `tblpromo`(`id`,`promoName`,`description`,`percentageDiscount`,`dateStart`,`dateExpiry`) values 
+(1,'Summer Free Pool','Join us this summer and have free access to the hotel\'s pool.',0,'2024-06-01','2024-08-31'),
+(2,'Holiday Christmas Deal','Book 3 nights during the Christmas season and get a discount and a free breakfast for the whole duration of your stay.',20,'2024-12-01','2024-10-31'),
+(3,'Holiday Halloween Deal','Stay 2 nights during the Halloween season and get a hefty discount.',15,'2024-11-01','2024-11-30');
 
 /*Table structure for table `tblreservation` */
 
@@ -179,6 +243,8 @@ CREATE TABLE `tblreservation` (
   CONSTRAINT `tblreservation_ibfk_1` FOREIGN KEY (`accountid`) REFERENCES `tblaccount` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+/*Data for the table `tblreservation` */
+
 /*Table structure for table `tbltenant` */
 
 DROP TABLE IF EXISTS `tbltenant`;
@@ -191,6 +257,16 @@ CREATE TABLE `tbltenant` (
   KEY `accountid` (`accountid`),
   CONSTRAINT `tbltenant_ibfk_1` FOREIGN KEY (`accountid`) REFERENCES `tblaccount` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `tbltenant` */
+
+insert  into `tbltenant`(`id`,`accountid`,`membership`) values 
+(4,11,'Normal'),
+(5,13,'Normal'),
+(6,14,'Normal'),
+(7,15,'Normal'),
+(8,16,'Normal'),
+(9,17,'Normal');
 
 /* Procedure structure for procedure `procAccountLogIn` */
 
