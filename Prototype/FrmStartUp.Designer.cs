@@ -74,6 +74,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.lnkPersonnel = new System.Windows.Forms.LinkLabel();
             this.lnkLogin = new System.Windows.Forms.LinkLabel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.pnlSignup.SuspendLayout();
@@ -83,11 +85,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLogin
             // 
             this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlLogin.Controls.Add(this.pictureBox4);
             this.pnlLogin.Controls.Add(this.lnkPersonnel);
             this.pnlLogin.Controls.Add(this.label10);
             this.pnlLogin.Controls.Add(this.label9);
@@ -535,6 +540,7 @@
             // pnlAdmin
             // 
             this.pnlAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlAdmin.Controls.Add(this.pictureBox5);
             this.pnlAdmin.Controls.Add(this.lnkLogin);
             this.pnlAdmin.Controls.Add(this.label15);
             this.pnlAdmin.Controls.Add(this.label13);
@@ -631,7 +637,7 @@
             this.lnkPersonnel.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkPersonnel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.lnkPersonnel.LinkColor = System.Drawing.Color.White;
-            this.lnkPersonnel.Location = new System.Drawing.Point(3, 435);
+            this.lnkPersonnel.Location = new System.Drawing.Point(7, 428);
             this.lnkPersonnel.Name = "lnkPersonnel";
             this.lnkPersonnel.Size = new System.Drawing.Size(195, 17);
             this.lnkPersonnel.TabIndex = 6;
@@ -646,13 +652,31 @@
             this.lnkLogin.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkLogin.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.lnkLogin.LinkColor = System.Drawing.Color.White;
-            this.lnkLogin.Location = new System.Drawing.Point(3, 435);
+            this.lnkLogin.Location = new System.Drawing.Point(18, 428);
             this.lnkLogin.Name = "lnkLogin";
             this.lnkLogin.Size = new System.Drawing.Size(172, 17);
             this.lnkLogin.TabIndex = 7;
             this.lnkLogin.TabStop = true;
             this.lnkLogin.Text = "Not a personnel? Click here.";
             this.lnkLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLogin_LinkClicked);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.White;
+            this.pictureBox4.Location = new System.Drawing.Point(7, 443);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(192, 5);
+            this.pictureBox4.TabIndex = 7;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.White;
+            this.pictureBox5.Location = new System.Drawing.Point(7, 443);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(192, 5);
+            this.pictureBox5.TabIndex = 8;
+            this.pictureBox5.TabStop = false;
             // 
             // FrmStartUp
             // 
@@ -663,9 +687,9 @@
             this.Controls.Add(this.dialogUpload);
             this.Controls.Add(this.btnSignup);
             this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.pnlAdmin);
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlSignup);
-            this.Controls.Add(this.pnlAdmin);
             this.Name = "FrmStartUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hotel Management";
@@ -683,6 +707,8 @@
             this.pnlAdmin.ResumeLayout(false);
             this.pnlAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -735,6 +761,8 @@
         private System.Windows.Forms.TextBox txtAdminPassword;
         private System.Windows.Forms.TextBox txtAdminUsername;
         private System.Windows.Forms.LinkLabel lnkLogin;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 

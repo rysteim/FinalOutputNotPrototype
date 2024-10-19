@@ -14,7 +14,7 @@ namespace Prototype
     public partial class FrmDashboard : Form
     {
         GlobalProcedures gproc;
-        private int userID, row;
+        private int userID, row, totalDays;
         private double total, reduction;
         public FrmDashboard(int userID)
         {
@@ -752,21 +752,28 @@ namespace Prototype
 
         private void btnMakeReservation_Click(object sender, EventArgs e)
         {
+            totalDays = dtmCheckout.Value.Day - dtmCheckin.Value.Day;
             try
             {
                 gproc.sqlHotelAdapter = new MySqlDataAdapter();
                 gproc.datHotel = new DataTable();
 
                 gproc.sqlCommand.Parameters.Clear();
-                gproc.sqlCommand.CommandText = "procTotalDiscount";
+                gproc.sqlCommand.CommandText = "procAddReservation";
                 gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
-                gproc.sqlCommand.Parameters.AddWithValue("@p_id", userID);
+                gproc.sqlCommand.Parameters.AddWithValue("@p_accountid", userID);
+                gproc.sqlCommand.Parameters.AddWithValue("@p_roomGrade", cmbRoomGrade.Text);
+                gproc.sqlCommand.Parameters.AddWithValue("@p_checkInDate", dtmCheckin.Value.ToString("yyyy-MM-dd"));
+                gproc.sqlCommand.Parameters.AddWithValue("@p_checkOutDate", dtmCheckout.Value.ToString("yyyy-MM-dd"));
+                gproc.sqlCommand.Parameters.AddWithValue("@p_totalDays", totalDays);
+                gproc.sqlCommand.Parameters.AddWithValue("@p_estimatedAmount", getEstimatedPrice(cmbRoomGrade.Text, totalDays));
 
                 gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
                 gproc.sqlHotelAdapter.Fill(gproc.datHotel);
 
                 if (gproc.datHotel.Rows.Count > 0)
                 {
+
                 }
                 else
                 {
@@ -776,6 +783,43 @@ namespace Prototype
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                gproc.sqlHotelAdapter?.Dispose();
+                gproc.datHotel?.Dispose();
+            }
+        }
+
+        public double getEstimatedPrice (string grade, int days)
+        {
+            try
+            {
+                gproc.sqlHotelAdapter = new MySqlDataAdapter();
+                gproc.datHotel = new DataTable();
+
+                gproc.sqlCommand.Parameters.Clear();
+                gproc.sqlCommand.CommandText = "procGetRoomPrice";
+                gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                gproc.sqlCommand.Parameters.AddWithValue("@p_roomGrade", grade);
+
+                gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
+                gproc.sqlHotelAdapter.Fill(gproc.datHotel);
+
+                if (gproc.datHotel.Rows.Count > 0)
+                {
+                    return days * Convert.ToDouble(gproc.datHotel.Rows[0]["initialPricePerDay"].ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Record not Found!", "Records", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return 0;
             }
             finally
             {
