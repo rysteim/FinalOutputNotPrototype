@@ -802,7 +802,7 @@
             this.btnDeleteRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteRoom.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteRoom.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoom.Location = new System.Drawing.Point(675, 349);
+            this.btnDeleteRoom.Location = new System.Drawing.Point(687, 342);
             this.btnDeleteRoom.Name = "btnDeleteRoom";
             this.btnDeleteRoom.Size = new System.Drawing.Size(171, 44);
             this.btnDeleteRoom.TabIndex = 3;
@@ -816,7 +816,7 @@
             this.btnEditRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditRoom.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditRoom.ForeColor = System.Drawing.Color.White;
-            this.btnEditRoom.Location = new System.Drawing.Point(484, 349);
+            this.btnEditRoom.Location = new System.Drawing.Point(510, 342);
             this.btnEditRoom.Name = "btnEditRoom";
             this.btnEditRoom.Size = new System.Drawing.Size(171, 44);
             this.btnEditRoom.TabIndex = 2;
@@ -830,7 +830,7 @@
             this.btnAddRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddRoom.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddRoom.ForeColor = System.Drawing.Color.White;
-            this.btnAddRoom.Location = new System.Drawing.Point(292, 349);
+            this.btnAddRoom.Location = new System.Drawing.Point(333, 342);
             this.btnAddRoom.Name = "btnAddRoom";
             this.btnAddRoom.Size = new System.Drawing.Size(171, 44);
             this.btnAddRoom.TabIndex = 1;
@@ -865,9 +865,9 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgRooms.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dtgRooms.Location = new System.Drawing.Point(0, 0);
+            this.dtgRooms.Location = new System.Drawing.Point(21, 21);
             this.dtgRooms.Name = "dtgRooms";
-            this.dtgRooms.Size = new System.Drawing.Size(880, 329);
+            this.dtgRooms.Size = new System.Drawing.Size(837, 308);
             this.dtgRooms.TabIndex = 0;
             // 
             // roomid

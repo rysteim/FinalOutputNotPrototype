@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -354,7 +354,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 46);
+            this.label1.Location = new System.Drawing.Point(42, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 21);
             this.label1.TabIndex = 4;
@@ -408,7 +408,7 @@
             this.btnMakeReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMakeReservation.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMakeReservation.ForeColor = System.Drawing.Color.White;
-            this.btnMakeReservation.Location = new System.Drawing.Point(632, 323);
+            this.btnMakeReservation.Location = new System.Drawing.Point(632, 330);
             this.btnMakeReservation.Name = "btnMakeReservation";
             this.btnMakeReservation.Size = new System.Drawing.Size(210, 44);
             this.btnMakeReservation.TabIndex = 13;
@@ -445,32 +445,33 @@
             // pnlRoom
             // 
             this.pnlRoom.BackColor = System.Drawing.Color.White;
-            this.pnlRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlRoom.Controls.Add(this.lblRoomDescription);
             this.pnlRoom.Controls.Add(this.lblRoomPrice);
             this.pnlRoom.Controls.Add(this.label7);
             this.pnlRoom.Controls.Add(this.label6);
-            this.pnlRoom.Location = new System.Drawing.Point(29, 82);
+            this.pnlRoom.Location = new System.Drawing.Point(29, 54);
             this.pnlRoom.Name = "pnlRoom";
-            this.pnlRoom.Size = new System.Drawing.Size(813, 29);
+            this.pnlRoom.Size = new System.Drawing.Size(813, 57);
             this.pnlRoom.TabIndex = 26;
             // 
             // lblRoomDescription
             // 
-            this.lblRoomDescription.BackColor = System.Drawing.Color.DimGray;
+            this.lblRoomDescription.BackColor = System.Drawing.Color.White;
+            this.lblRoomDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblRoomDescription.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomDescription.ForeColor = System.Drawing.Color.White;
-            this.lblRoomDescription.Location = new System.Drawing.Point(278, 3);
+            this.lblRoomDescription.ForeColor = System.Drawing.Color.Black;
+            this.lblRoomDescription.Location = new System.Drawing.Point(278, 2);
             this.lblRoomDescription.Name = "lblRoomDescription";
-            this.lblRoomDescription.Size = new System.Drawing.Size(522, 20);
+            this.lblRoomDescription.Size = new System.Drawing.Size(522, 50);
             this.lblRoomDescription.TabIndex = 3;
             this.lblRoomDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblRoomPrice
             // 
-            this.lblRoomPrice.BackColor = System.Drawing.Color.DimGray;
+            this.lblRoomPrice.BackColor = System.Drawing.Color.White;
+            this.lblRoomPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblRoomPrice.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomPrice.ForeColor = System.Drawing.Color.White;
+            this.lblRoomPrice.ForeColor = System.Drawing.Color.Black;
             this.lblRoomPrice.Location = new System.Drawing.Point(72, 3);
             this.lblRoomPrice.Name = "lblRoomPrice";
             this.lblRoomPrice.Size = new System.Drawing.Size(100, 20);
@@ -505,7 +506,7 @@
             this.btnConfirmReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmReservation.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmReservation.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmReservation.Location = new System.Drawing.Point(318, 323);
+            this.btnConfirmReservation.Location = new System.Drawing.Point(318, 330);
             this.btnConfirmReservation.Name = "btnConfirmReservation";
             this.btnConfirmReservation.Size = new System.Drawing.Size(248, 44);
             this.btnConfirmReservation.TabIndex = 25;
@@ -520,7 +521,7 @@
             this.btnSeeReservations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeeReservations.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeeReservations.ForeColor = System.Drawing.Color.White;
-            this.btnSeeReservations.Location = new System.Drawing.Point(29, 323);
+            this.btnSeeReservations.Location = new System.Drawing.Point(29, 330);
             this.btnSeeReservations.Name = "btnSeeReservations";
             this.btnSeeReservations.Size = new System.Drawing.Size(210, 44);
             this.btnSeeReservations.TabIndex = 24;
@@ -552,6 +553,7 @@
             this.dtmCheckout.Name = "dtmCheckout";
             this.dtmCheckout.Size = new System.Drawing.Size(636, 28);
             this.dtmCheckout.TabIndex = 21;
+            this.dtmCheckout.ValueChanged += new System.EventHandler(this.dtmCheckout_ValueChanged);
             // 
             // dtmCheckin
             // 
@@ -572,16 +574,17 @@
             "Junior Suite",
             "Executive Suite",
             "Royal Suite",
-            "Penthouse Suite"});
-            this.cmbRoomGrade.Location = new System.Drawing.Point(206, 43);
+            "Imperial Suite"});
+            this.cmbRoomGrade.Location = new System.Drawing.Point(206, 18);
             this.cmbRoomGrade.Name = "cmbRoomGrade";
             this.cmbRoomGrade.Size = new System.Drawing.Size(636, 29);
             this.cmbRoomGrade.TabIndex = 19;
+            this.cmbRoomGrade.SelectedIndexChanged += new System.EventHandler(this.cmbRoomGrade_SelectedIndexChanged);
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox3.Location = new System.Drawing.Point(29, 39);
+            this.pictureBox3.Location = new System.Drawing.Point(29, 14);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(10, 34);
             this.pictureBox3.TabIndex = 3;
@@ -896,39 +899,39 @@
             this.dtgAddon.AllowUserToDeleteRows = false;
             this.dtgAddon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgAddon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgAddon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle67.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle67.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle67.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgAddon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle67;
             this.dtgAddon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgAddon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.addons,
             this.price,
             this.addon_description});
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgAddon.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle68.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgAddon.DefaultCellStyle = dataGridViewCellStyle68;
             this.dtgAddon.Location = new System.Drawing.Point(32, 175);
             this.dtgAddon.Name = "dtgAddon";
             this.dtgAddon.ReadOnly = true;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgAddon.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle69.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle69.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle69.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgAddon.RowHeadersDefaultCellStyle = dataGridViewCellStyle69;
             this.dtgAddon.Size = new System.Drawing.Size(572, 203);
             this.dtgAddon.TabIndex = 21;
             // 
@@ -963,39 +966,39 @@
             this.dtgPromo.AllowUserToDeleteRows = false;
             this.dtgPromo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgPromo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgPromo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle70.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle70.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle70.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgPromo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle70;
             this.dtgPromo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgPromo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.promo,
             this.discount,
             this.promo_description});
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgPromo.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle71.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle71.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgPromo.DefaultCellStyle = dataGridViewCellStyle71;
             this.dtgPromo.Location = new System.Drawing.Point(32, 175);
             this.dtgPromo.Name = "dtgPromo";
             this.dtgPromo.ReadOnly = true;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgPromo.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle72.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle72.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle72.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgPromo.RowHeadersDefaultCellStyle = dataGridViewCellStyle72;
             this.dtgPromo.Size = new System.Drawing.Size(572, 203);
             this.dtgPromo.TabIndex = 33;
             // 

@@ -675,6 +675,40 @@ namespace Prototype
             }
         }
 
+        private void getDiscount()
+        {
+            try
+            {
+                gproc.sqlHotelAdapter = new MySqlDataAdapter();
+                gproc.datHotel = new DataTable();
+
+                gproc.sqlCommand.Parameters.Clear();
+                gproc.sqlCommand.CommandText = "procTotalDiscount";
+                gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                gproc.sqlCommand.Parameters.AddWithValue("@p_id", userID);
+
+                gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
+                gproc.sqlHotelAdapter.Fill(gproc.datHotel);
+
+                if (gproc.datHotel.Rows.Count > 0)
+                {
+                    reduction = Convert.ToDouble(gproc.datHotel.Rows[0]["TOTAL DISCOUNT"].ToString());
+                    lblTotalDiscount.Text = $"Total Discount: {reduction}%";
+                }
+                else
+                {
+                    MessageBox.Show("Record not Found!", "Records", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                gproc.sqlHotelAdapter?.Dispose();
+                gproc.datHotel?.Dispose();
+            }
+        }
         private void totalPrice()
         {
             try
@@ -715,7 +749,7 @@ namespace Prototype
             getAccount();
         }
 
-        private void getDiscount()
+        private void cmbRoomGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -723,41 +757,47 @@ namespace Prototype
                 gproc.datHotel = new DataTable();
 
                 gproc.sqlCommand.Parameters.Clear();
-                gproc.sqlCommand.CommandText = "procTotalDiscount";
+                gproc.sqlCommand.CommandText = "procSearchHotelRoom";
                 gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
-                gproc.sqlCommand.Parameters.AddWithValue("@p_id", userID);
-
+                gproc.sqlCommand.Parameters.AddWithValue("@p_roomGrade", cmbRoomGrade.Text);
                 gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
+                gproc.sqlCommand.ExecuteNonQuery();
+                gproc.datHotel.Clear();
                 gproc.sqlHotelAdapter.Fill(gproc.datHotel);
-
                 if (gproc.datHotel.Rows.Count > 0)
                 {
-                    reduction = Convert.ToDouble(gproc.datHotel.Rows[0]["TOTAL DISCOUNT"].ToString());
-                    lblTotalDiscount.Text = $"Total Discount: {reduction}%";
+                    lblRoomPrice.Text = $"₱{gproc.datHotel.Rows[0]["initialPricePerDay"].ToString():F2}";
+                    lblRoomDescription.Text = gproc.datHotel.Rows[0]["description"].ToString();
                 }
                 else
                 {
                     MessageBox.Show("Record not Found!", "Records", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
+                gproc.sqlHotelAdapter.Dispose();
+                gproc.datHotel.Dispose();
+
             }
             catch (Exception ex)
             {
-            }
-            finally
-            {
-                gproc.sqlHotelAdapter?.Dispose();
-                gproc.datHotel?.Dispose();
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
+        private void dtmCheckout_ValueChanged(object sender, EventArgs e)
+        {
+            totalDays = dtmCheckout.Value.Day - dtmCheckin.Value.Day;
+            getEstimatedPrice(cmbRoomGrade.Text, totalDays);
+            txtTotalDays.Text = totalDays.ToString();
+        }
+
+
         private void btnMakeReservation_Click(object sender, EventArgs e)
         {
+            double price = getEstimatedPrice(cmbRoomGrade.Text, totalDays);
             totalDays = dtmCheckout.Value.Day - dtmCheckin.Value.Day;
             try
             {
-                gproc.sqlHotelAdapter = new MySqlDataAdapter();
-                gproc.datHotel = new DataTable();
-
                 gproc.sqlCommand.Parameters.Clear();
                 gproc.sqlCommand.CommandText = "procAddReservation";
                 gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -766,28 +806,13 @@ namespace Prototype
                 gproc.sqlCommand.Parameters.AddWithValue("@p_checkInDate", dtmCheckin.Value.ToString("yyyy-MM-dd"));
                 gproc.sqlCommand.Parameters.AddWithValue("@p_checkOutDate", dtmCheckout.Value.ToString("yyyy-MM-dd"));
                 gproc.sqlCommand.Parameters.AddWithValue("@p_totalDays", totalDays);
-                gproc.sqlCommand.Parameters.AddWithValue("@p_estimatedAmount", getEstimatedPrice(cmbRoomGrade.Text, totalDays));
-
-                gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
-                gproc.sqlHotelAdapter.Fill(gproc.datHotel);
-
-                if (gproc.datHotel.Rows.Count > 0)
-                {
-
-                }
-                else
-                {
-                    MessageBox.Show("Record not Found!", "Records", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                gproc.sqlCommand.Parameters.AddWithValue("@p_estimatedAmount", price);
+                gproc.sqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Reservation successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                gproc.sqlHotelAdapter?.Dispose();
-                gproc.datHotel?.Dispose();
             }
         }
 
@@ -808,6 +833,8 @@ namespace Prototype
 
                 if (gproc.datHotel.Rows.Count > 0)
                 {
+                    double price = days * Convert.ToDouble(gproc.datHotel.Rows[0]["initialPricePerDay"].ToString());
+                    txtEstimatedAmount.Text = $"₱{price.ToString():F2}";
                     return days * Convert.ToDouble(gproc.datHotel.Rows[0]["initialPricePerDay"].ToString());
                 }
                 else
