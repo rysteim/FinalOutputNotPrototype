@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnTenants = new System.Windows.Forms.Button();
             this.btnRooms = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnReservations = new System.Windows.Forms.Button();
             this.btnAddonsPromo = new System.Windows.Forms.Button();
             this.btnPersonnel = new System.Windows.Forms.Button();
@@ -46,23 +50,30 @@
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblFirstname = new System.Windows.Forms.Label();
             this.picProfile = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btnMakeReservation = new System.Windows.Forms.Button();
             this.pnlDashboard = new System.Windows.Forms.Panel();
+            this.pnlRoom = new System.Windows.Forms.Panel();
+            this.lblRoomDescription = new System.Windows.Forms.Label();
+            this.lblRoomPrice = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnConfirmReservation = new System.Windows.Forms.Button();
+            this.btnSeeReservations = new System.Windows.Forms.Button();
             this.txtEstimatedAmount = new System.Windows.Forms.TextBox();
             this.txtTotalDays = new System.Windows.Forms.TextBox();
             this.dtmCheckout = new System.Windows.Forms.DateTimePicker();
             this.dtmCheckin = new System.Windows.Forms.DateTimePicker();
             this.cmbRoomGrade = new System.Windows.Forms.ComboBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pnlReservations = new System.Windows.Forms.Panel();
             this.dialogNoReservations = new System.Windows.Forms.Panel();
             this.lblMessage = new System.Windows.Forms.Label();
@@ -74,23 +85,27 @@
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.lblDay = new System.Windows.Forms.Label();
             this.pnlAddonsPromo = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.btnPromos = new System.Windows.Forms.Button();
             this.btnAddons = new System.Windows.Forms.Button();
-            this.btnDeleteAddons = new System.Windows.Forms.Button();
-            this.dtgAP = new System.Windows.Forms.DataGridView();
-            this.ap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAddAddons = new System.Windows.Forms.Button();
             this.btnEditAddons = new System.Windows.Forms.Button();
             this.btnEditPromos = new System.Windows.Forms.Button();
-            this.btnAddPromos = new System.Windows.Forms.Button();
+            this.btnSubmitAP = new System.Windows.Forms.Button();
+            this.btnDeleteAddons = new System.Windows.Forms.Button();
             this.btnDeletePromos = new System.Windows.Forms.Button();
-            this.btnSubmitAddons = new System.Windows.Forms.Button();
-            this.btnSubmitPromos = new System.Windows.Forms.Button();
+            this.dtgAddon = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addons = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addon_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgPromo = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.promo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.promo_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTotalDiscount = new System.Windows.Forms.Label();
+            this.btnAddAddons = new System.Windows.Forms.Button();
+            this.btnAddPromos = new System.Windows.Forms.Button();
             this.pnlAddons = new System.Windows.Forms.Panel();
             this.lblAddons = new System.Windows.Forms.Label();
             this.txtAddons = new System.Windows.Forms.TextBox();
@@ -105,54 +120,28 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pnlRooms = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
+            this.pnlDashboard.SuspendLayout();
+            this.pnlRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.pnlDashboard.SuspendLayout();
             this.pnlReservations.SuspendLayout();
             this.dialogNoReservations.SuspendLayout();
             this.dialogRemainingTime.SuspendLayout();
             this.pnlAddonsPromo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgAP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAddon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPromo)).BeginInit();
             this.pnlAddons.SuspendLayout();
             this.pnlPromos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.pnlRooms.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Prototype.Properties.Resources.Hôtelliere1;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -241,6 +230,16 @@
             this.btnDashboard.Text = "DASHBOARD";
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Prototype.Properties.Resources.Hôtelliere1;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // btnReservations
             // 
@@ -338,6 +337,7 @@
             this.lblFirstname.Size = new System.Drawing.Size(138, 22);
             this.lblFirstname.TabIndex = 1;
             this.lblFirstname.Text = "Profile Name";
+            this.lblFirstname.Click += new System.EventHandler(this.lblFirstname_Click);
             // 
             // picProfile
             // 
@@ -349,15 +349,6 @@
             this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picProfile.TabIndex = 0;
             this.picProfile.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox3.Location = new System.Drawing.Point(29, 39);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(10, 34);
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
             // 
             // label1
             // 
@@ -373,77 +364,41 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 96);
+            this.label2.Location = new System.Drawing.Point(42, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 21);
             this.label2.TabIndex = 6;
             this.label2.Text = "Check-in Date:";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox4.Location = new System.Drawing.Point(29, 89);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(10, 34);
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 146);
+            this.label3.Location = new System.Drawing.Point(42, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 21);
             this.label3.TabIndex = 8;
             this.label3.Text = "Check-out Date:";
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox5.Location = new System.Drawing.Point(29, 139);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(10, 34);
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 196);
+            this.label4.Location = new System.Drawing.Point(42, 226);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 21);
             this.label4.TabIndex = 10;
             this.label4.Text = "Total Days:";
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox6.Location = new System.Drawing.Point(29, 189);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(10, 34);
-            this.pictureBox6.TabIndex = 9;
-            this.pictureBox6.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(42, 246);
+            this.label5.Location = new System.Drawing.Point(42, 276);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 21);
             this.label5.TabIndex = 12;
             this.label5.Text = "Estimated Amount:";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox7.Location = new System.Drawing.Point(29, 239);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(10, 34);
-            this.pictureBox7.TabIndex = 11;
-            this.pictureBox7.TabStop = false;
             // 
             // btnMakeReservation
             // 
@@ -459,9 +414,13 @@
             this.btnMakeReservation.TabIndex = 13;
             this.btnMakeReservation.Text = "MAKE RESERVATION";
             this.btnMakeReservation.UseVisualStyleBackColor = false;
+            this.btnMakeReservation.Click += new System.EventHandler(this.btnMakeReservation_Click);
             // 
             // pnlDashboard
             // 
+            this.pnlDashboard.Controls.Add(this.pnlRoom);
+            this.pnlDashboard.Controls.Add(this.btnConfirmReservation);
+            this.pnlDashboard.Controls.Add(this.btnSeeReservations);
             this.pnlDashboard.Controls.Add(this.txtEstimatedAmount);
             this.pnlDashboard.Controls.Add(this.txtTotalDays);
             this.pnlDashboard.Controls.Add(this.dtmCheckout);
@@ -483,10 +442,95 @@
             this.pnlDashboard.Size = new System.Drawing.Size(880, 410);
             this.pnlDashboard.TabIndex = 19;
             // 
+            // pnlRoom
+            // 
+            this.pnlRoom.BackColor = System.Drawing.Color.White;
+            this.pnlRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlRoom.Controls.Add(this.lblRoomDescription);
+            this.pnlRoom.Controls.Add(this.lblRoomPrice);
+            this.pnlRoom.Controls.Add(this.label7);
+            this.pnlRoom.Controls.Add(this.label6);
+            this.pnlRoom.Location = new System.Drawing.Point(29, 82);
+            this.pnlRoom.Name = "pnlRoom";
+            this.pnlRoom.Size = new System.Drawing.Size(813, 29);
+            this.pnlRoom.TabIndex = 26;
+            // 
+            // lblRoomDescription
+            // 
+            this.lblRoomDescription.BackColor = System.Drawing.Color.DimGray;
+            this.lblRoomDescription.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomDescription.ForeColor = System.Drawing.Color.White;
+            this.lblRoomDescription.Location = new System.Drawing.Point(278, 3);
+            this.lblRoomDescription.Name = "lblRoomDescription";
+            this.lblRoomDescription.Size = new System.Drawing.Size(522, 20);
+            this.lblRoomDescription.TabIndex = 3;
+            this.lblRoomDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblRoomPrice
+            // 
+            this.lblRoomPrice.BackColor = System.Drawing.Color.DimGray;
+            this.lblRoomPrice.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomPrice.ForeColor = System.Drawing.Color.White;
+            this.lblRoomPrice.Location = new System.Drawing.Point(72, 3);
+            this.lblRoomPrice.Name = "lblRoomPrice";
+            this.lblRoomPrice.Size = new System.Drawing.Size(100, 20);
+            this.lblRoomPrice.TabIndex = 2;
+            this.lblRoomPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(189, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Description:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(22, 2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 23);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Price:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnConfirmReservation
+            // 
+            this.btnConfirmReservation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnConfirmReservation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnConfirmReservation.FlatAppearance.BorderSize = 2;
+            this.btnConfirmReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmReservation.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmReservation.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmReservation.Location = new System.Drawing.Point(318, 323);
+            this.btnConfirmReservation.Name = "btnConfirmReservation";
+            this.btnConfirmReservation.Size = new System.Drawing.Size(248, 44);
+            this.btnConfirmReservation.TabIndex = 25;
+            this.btnConfirmReservation.Text = "CONFIRM RESERVATION";
+            this.btnConfirmReservation.UseVisualStyleBackColor = false;
+            // 
+            // btnSeeReservations
+            // 
+            this.btnSeeReservations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSeeReservations.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSeeReservations.FlatAppearance.BorderSize = 2;
+            this.btnSeeReservations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeeReservations.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeeReservations.ForeColor = System.Drawing.Color.White;
+            this.btnSeeReservations.Location = new System.Drawing.Point(29, 323);
+            this.btnSeeReservations.Name = "btnSeeReservations";
+            this.btnSeeReservations.Size = new System.Drawing.Size(210, 44);
+            this.btnSeeReservations.TabIndex = 24;
+            this.btnSeeReservations.Text = "SEE RESERVATIONS";
+            this.btnSeeReservations.UseVisualStyleBackColor = false;
+            // 
             // txtEstimatedAmount
             // 
             this.txtEstimatedAmount.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstimatedAmount.Location = new System.Drawing.Point(206, 244);
+            this.txtEstimatedAmount.Location = new System.Drawing.Point(206, 274);
             this.txtEstimatedAmount.Name = "txtEstimatedAmount";
             this.txtEstimatedAmount.ReadOnly = true;
             this.txtEstimatedAmount.Size = new System.Drawing.Size(636, 28);
@@ -495,7 +539,7 @@
             // txtTotalDays
             // 
             this.txtTotalDays.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalDays.Location = new System.Drawing.Point(206, 194);
+            this.txtTotalDays.Location = new System.Drawing.Point(206, 224);
             this.txtTotalDays.Name = "txtTotalDays";
             this.txtTotalDays.ReadOnly = true;
             this.txtTotalDays.Size = new System.Drawing.Size(636, 28);
@@ -504,7 +548,7 @@
             // dtmCheckout
             // 
             this.dtmCheckout.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtmCheckout.Location = new System.Drawing.Point(206, 141);
+            this.dtmCheckout.Location = new System.Drawing.Point(206, 171);
             this.dtmCheckout.Name = "dtmCheckout";
             this.dtmCheckout.Size = new System.Drawing.Size(636, 28);
             this.dtmCheckout.TabIndex = 21;
@@ -512,7 +556,7 @@
             // dtmCheckin
             // 
             this.dtmCheckin.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtmCheckin.Location = new System.Drawing.Point(206, 91);
+            this.dtmCheckin.Location = new System.Drawing.Point(206, 121);
             this.dtmCheckin.Name = "dtmCheckin";
             this.dtmCheckin.Size = new System.Drawing.Size(636, 28);
             this.dtmCheckin.TabIndex = 20;
@@ -526,6 +570,51 @@
             this.cmbRoomGrade.Name = "cmbRoomGrade";
             this.cmbRoomGrade.Size = new System.Drawing.Size(636, 29);
             this.cmbRoomGrade.TabIndex = 19;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox3.Location = new System.Drawing.Point(29, 39);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(10, 34);
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox4.Location = new System.Drawing.Point(29, 119);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(10, 34);
+            this.pictureBox4.TabIndex = 5;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox5.Location = new System.Drawing.Point(29, 169);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(10, 34);
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox6.Location = new System.Drawing.Point(29, 219);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(10, 34);
+            this.pictureBox6.TabIndex = 9;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox7.Location = new System.Drawing.Point(29, 269);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(10, 34);
+            this.pictureBox7.TabIndex = 11;
+            this.pictureBox7.TabStop = false;
             // 
             // pnlReservations
             // 
@@ -651,18 +740,19 @@
             // 
             // pnlAddonsPromo
             // 
-            this.pnlAddonsPromo.Controls.Add(this.label13);
+            this.pnlAddonsPromo.Controls.Add(this.lblTotalPrice);
             this.pnlAddonsPromo.Controls.Add(this.btnPromos);
             this.pnlAddonsPromo.Controls.Add(this.btnAddons);
-            this.pnlAddonsPromo.Controls.Add(this.btnDeleteAddons);
-            this.pnlAddonsPromo.Controls.Add(this.dtgAP);
-            this.pnlAddonsPromo.Controls.Add(this.btnAddAddons);
             this.pnlAddonsPromo.Controls.Add(this.btnEditAddons);
             this.pnlAddonsPromo.Controls.Add(this.btnEditPromos);
-            this.pnlAddonsPromo.Controls.Add(this.btnAddPromos);
+            this.pnlAddonsPromo.Controls.Add(this.btnSubmitAP);
+            this.pnlAddonsPromo.Controls.Add(this.btnDeleteAddons);
             this.pnlAddonsPromo.Controls.Add(this.btnDeletePromos);
-            this.pnlAddonsPromo.Controls.Add(this.btnSubmitAddons);
-            this.pnlAddonsPromo.Controls.Add(this.btnSubmitPromos);
+            this.pnlAddonsPromo.Controls.Add(this.dtgAddon);
+            this.pnlAddonsPromo.Controls.Add(this.dtgPromo);
+            this.pnlAddonsPromo.Controls.Add(this.lblTotalDiscount);
+            this.pnlAddonsPromo.Controls.Add(this.btnAddAddons);
+            this.pnlAddonsPromo.Controls.Add(this.btnAddPromos);
             this.pnlAddonsPromo.Controls.Add(this.pnlAddons);
             this.pnlAddonsPromo.Controls.Add(this.pnlPromos);
             this.pnlAddonsPromo.Location = new System.Drawing.Point(195, 86);
@@ -670,18 +760,18 @@
             this.pnlAddonsPromo.Size = new System.Drawing.Size(880, 410);
             this.pnlAddonsPromo.TabIndex = 22;
             // 
-            // label13
+            // lblTotalPrice
             // 
-            this.label13.BackColor = System.Drawing.Color.Gainsboro;
-            this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label13.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(632, 184);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(210, 20);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "Total:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTotalPrice.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblTotalPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalPrice.Location = new System.Drawing.Point(632, 184);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(210, 20);
+            this.lblTotalPrice.TabIndex = 32;
+            this.lblTotalPrice.Text = "Total Price:";
+            this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnPromos
             // 
@@ -715,101 +805,6 @@
             this.btnAddons.UseVisualStyleBackColor = false;
             this.btnAddons.Click += new System.EventHandler(this.btnAddons_Click);
             // 
-            // btnDeleteAddons
-            // 
-            this.btnDeleteAddons.BackColor = System.Drawing.Color.Black;
-            this.btnDeleteAddons.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnDeleteAddons.FlatAppearance.BorderSize = 2;
-            this.btnDeleteAddons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteAddons.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteAddons.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteAddons.Location = new System.Drawing.Point(632, 294);
-            this.btnDeleteAddons.Name = "btnDeleteAddons";
-            this.btnDeleteAddons.Size = new System.Drawing.Size(210, 29);
-            this.btnDeleteAddons.TabIndex = 25;
-            this.btnDeleteAddons.Text = "DELETE";
-            this.btnDeleteAddons.UseVisualStyleBackColor = false;
-            // 
-            // dtgAP
-            // 
-            this.dtgAP.AllowUserToAddRows = false;
-            this.dtgAP.AllowUserToDeleteRows = false;
-            this.dtgAP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgAP.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgAP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.dtgAP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgAP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ap,
-            this.price,
-            this.quantity,
-            this.total_price,
-            this.description});
-            this.dtgAP.Location = new System.Drawing.Point(31, 182);
-            this.dtgAP.Name = "dtgAP";
-            this.dtgAP.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgAP.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.dtgAP.Size = new System.Drawing.Size(572, 196);
-            this.dtgAP.TabIndex = 21;
-            // 
-            // ap
-            // 
-            this.ap.HeaderText = "Addons/Promo";
-            this.ap.Name = "ap";
-            this.ap.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Price";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // quantity
-            // 
-            this.quantity.HeaderText = "Quantity";
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            // 
-            // total_price
-            // 
-            this.total_price.HeaderText = "Total Price";
-            this.total_price.Name = "total_price";
-            this.total_price.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.HeaderText = "Description";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            // 
-            // btnAddAddons
-            // 
-            this.btnAddAddons.BackColor = System.Drawing.Color.Black;
-            this.btnAddAddons.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnAddAddons.FlatAppearance.BorderSize = 2;
-            this.btnAddAddons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddAddons.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAddons.ForeColor = System.Drawing.Color.White;
-            this.btnAddAddons.Location = new System.Drawing.Point(632, 214);
-            this.btnAddAddons.Name = "btnAddAddons";
-            this.btnAddAddons.Size = new System.Drawing.Size(210, 29);
-            this.btnAddAddons.TabIndex = 23;
-            this.btnAddAddons.Text = "ADD";
-            this.btnAddAddons.UseVisualStyleBackColor = false;
-            // 
             // btnEditAddons
             // 
             this.btnEditAddons.BackColor = System.Drawing.Color.Black;
@@ -840,20 +835,37 @@
             this.btnEditPromos.Text = "EDIT";
             this.btnEditPromos.UseVisualStyleBackColor = false;
             // 
-            // btnAddPromos
+            // btnSubmitAP
             // 
-            this.btnAddPromos.BackColor = System.Drawing.Color.Black;
-            this.btnAddPromos.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnAddPromos.FlatAppearance.BorderSize = 2;
-            this.btnAddPromos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPromos.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPromos.ForeColor = System.Drawing.Color.White;
-            this.btnAddPromos.Location = new System.Drawing.Point(632, 214);
-            this.btnAddPromos.Name = "btnAddPromos";
-            this.btnAddPromos.Size = new System.Drawing.Size(210, 29);
-            this.btnAddPromos.TabIndex = 28;
-            this.btnAddPromos.Text = "ADD";
-            this.btnAddPromos.UseVisualStyleBackColor = false;
+            this.btnSubmitAP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSubmitAP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSubmitAP.FlatAppearance.BorderSize = 2;
+            this.btnSubmitAP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmitAP.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmitAP.ForeColor = System.Drawing.Color.White;
+            this.btnSubmitAP.Location = new System.Drawing.Point(632, 334);
+            this.btnSubmitAP.Name = "btnSubmitAP";
+            this.btnSubmitAP.Size = new System.Drawing.Size(210, 44);
+            this.btnSubmitAP.TabIndex = 31;
+            this.btnSubmitAP.Text = "SUBMIT";
+            this.btnSubmitAP.UseVisualStyleBackColor = false;
+            this.btnSubmitAP.Click += new System.EventHandler(this.btnSubmitAP_Click);
+            // 
+            // btnDeleteAddons
+            // 
+            this.btnDeleteAddons.BackColor = System.Drawing.Color.Black;
+            this.btnDeleteAddons.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnDeleteAddons.FlatAppearance.BorderSize = 2;
+            this.btnDeleteAddons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteAddons.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAddons.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteAddons.Location = new System.Drawing.Point(632, 294);
+            this.btnDeleteAddons.Name = "btnDeleteAddons";
+            this.btnDeleteAddons.Size = new System.Drawing.Size(210, 29);
+            this.btnDeleteAddons.TabIndex = 25;
+            this.btnDeleteAddons.Text = "DELETE";
+            this.btnDeleteAddons.UseVisualStyleBackColor = false;
+            this.btnDeleteAddons.Click += new System.EventHandler(this.btnDeleteAddons_Click);
             // 
             // btnDeletePromos
             // 
@@ -869,36 +881,186 @@
             this.btnDeletePromos.TabIndex = 30;
             this.btnDeletePromos.Text = "DELETE";
             this.btnDeletePromos.UseVisualStyleBackColor = false;
+            this.btnDeletePromos.Click += new System.EventHandler(this.btnDeletePromos_Click);
             // 
-            // btnSubmitAddons
+            // dtgAddon
             // 
-            this.btnSubmitAddons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSubmitAddons.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSubmitAddons.FlatAppearance.BorderSize = 2;
-            this.btnSubmitAddons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmitAddons.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmitAddons.ForeColor = System.Drawing.Color.White;
-            this.btnSubmitAddons.Location = new System.Drawing.Point(632, 334);
-            this.btnSubmitAddons.Name = "btnSubmitAddons";
-            this.btnSubmitAddons.Size = new System.Drawing.Size(210, 44);
-            this.btnSubmitAddons.TabIndex = 19;
-            this.btnSubmitAddons.Text = "SUBMIT";
-            this.btnSubmitAddons.UseVisualStyleBackColor = false;
+            this.dtgAddon.AllowUserToAddRows = false;
+            this.dtgAddon.AllowUserToDeleteRows = false;
+            this.dtgAddon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgAddon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgAddon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dtgAddon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgAddon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.addons,
+            this.price,
+            this.addon_description});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgAddon.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dtgAddon.Location = new System.Drawing.Point(32, 175);
+            this.dtgAddon.Name = "dtgAddon";
+            this.dtgAddon.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgAddon.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dtgAddon.Size = new System.Drawing.Size(572, 203);
+            this.dtgAddon.TabIndex = 21;
             // 
-            // btnSubmitPromos
+            // id
             // 
-            this.btnSubmitPromos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSubmitPromos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSubmitPromos.FlatAppearance.BorderSize = 2;
-            this.btnSubmitPromos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmitPromos.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmitPromos.ForeColor = System.Drawing.Color.White;
-            this.btnSubmitPromos.Location = new System.Drawing.Point(632, 334);
-            this.btnSubmitPromos.Name = "btnSubmitPromos";
-            this.btnSubmitPromos.Size = new System.Drawing.Size(210, 44);
-            this.btnSubmitPromos.TabIndex = 31;
-            this.btnSubmitPromos.Text = "SUBMIT";
-            this.btnSubmitPromos.UseVisualStyleBackColor = false;
+            this.id.FillWeight = 30F;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // addons
+            // 
+            this.addons.HeaderText = "Addons";
+            this.addons.Name = "addons";
+            this.addons.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Price";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // addon_description
+            // 
+            this.addon_description.HeaderText = "Description";
+            this.addon_description.Name = "addon_description";
+            this.addon_description.ReadOnly = true;
+            // 
+            // dtgPromo
+            // 
+            this.dtgPromo.AllowUserToAddRows = false;
+            this.dtgPromo.AllowUserToDeleteRows = false;
+            this.dtgPromo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgPromo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgPromo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dtgPromo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgPromo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.promo,
+            this.discount,
+            this.promo_description});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgPromo.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dtgPromo.Location = new System.Drawing.Point(32, 175);
+            this.dtgPromo.Name = "dtgPromo";
+            this.dtgPromo.ReadOnly = true;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgPromo.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dtgPromo.Size = new System.Drawing.Size(572, 203);
+            this.dtgPromo.TabIndex = 33;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 30F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // promo
+            // 
+            this.promo.HeaderText = "Promo";
+            this.promo.Name = "promo";
+            this.promo.ReadOnly = true;
+            // 
+            // discount
+            // 
+            this.discount.HeaderText = "Discount";
+            this.discount.Name = "discount";
+            this.discount.ReadOnly = true;
+            // 
+            // promo_description
+            // 
+            this.promo_description.HeaderText = "Description";
+            this.promo_description.Name = "promo_description";
+            this.promo_description.ReadOnly = true;
+            // 
+            // lblTotalDiscount
+            // 
+            this.lblTotalDiscount.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblTotalDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTotalDiscount.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalDiscount.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalDiscount.Location = new System.Drawing.Point(632, 184);
+            this.lblTotalDiscount.Name = "lblTotalDiscount";
+            this.lblTotalDiscount.Size = new System.Drawing.Size(210, 20);
+            this.lblTotalDiscount.TabIndex = 34;
+            this.lblTotalDiscount.Text = "Total Discount:";
+            this.lblTotalDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnAddAddons
+            // 
+            this.btnAddAddons.BackColor = System.Drawing.Color.Black;
+            this.btnAddAddons.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAddAddons.FlatAppearance.BorderSize = 2;
+            this.btnAddAddons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddAddons.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAddons.ForeColor = System.Drawing.Color.White;
+            this.btnAddAddons.Location = new System.Drawing.Point(632, 214);
+            this.btnAddAddons.Name = "btnAddAddons";
+            this.btnAddAddons.Size = new System.Drawing.Size(210, 29);
+            this.btnAddAddons.TabIndex = 23;
+            this.btnAddAddons.Text = "ADD";
+            this.btnAddAddons.UseVisualStyleBackColor = false;
+            this.btnAddAddons.Click += new System.EventHandler(this.btnAddAddons_Click);
+            // 
+            // btnAddPromos
+            // 
+            this.btnAddPromos.BackColor = System.Drawing.Color.Black;
+            this.btnAddPromos.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAddPromos.FlatAppearance.BorderSize = 2;
+            this.btnAddPromos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPromos.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPromos.ForeColor = System.Drawing.Color.White;
+            this.btnAddPromos.Location = new System.Drawing.Point(632, 214);
+            this.btnAddPromos.Name = "btnAddPromos";
+            this.btnAddPromos.Size = new System.Drawing.Size(210, 29);
+            this.btnAddPromos.TabIndex = 28;
+            this.btnAddPromos.Text = "ADD";
+            this.btnAddPromos.UseVisualStyleBackColor = false;
+            this.btnAddPromos.Click += new System.EventHandler(this.btnAddPromos_Click);
             // 
             // pnlAddons
             // 
@@ -935,6 +1097,7 @@
             // 
             // cmbAddons
             // 
+            this.cmbAddons.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAddons.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAddons.FormattingEnabled = true;
             this.cmbAddons.Location = new System.Drawing.Point(132, 18);
@@ -1008,6 +1171,7 @@
             // 
             // cmbPromo
             // 
+            this.cmbPromo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPromo.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPromo.FormattingEnabled = true;
             this.cmbPromo.Location = new System.Drawing.Point(132, 18);
@@ -1046,134 +1210,6 @@
             this.label16.Text = "Promo:";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(42, 196);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 21);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Total Days:";
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox12.Location = new System.Drawing.Point(29, 239);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(10, 34);
-            this.pictureBox12.TabIndex = 11;
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox11.Location = new System.Drawing.Point(29, 189);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(10, 34);
-            this.pictureBox11.TabIndex = 9;
-            this.pictureBox11.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(42, 246);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(141, 21);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Estimated Amount:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(42, 146);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 21);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Check-out Date:";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(632, 323);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 44);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "MAKE RESERVATION";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox10.Location = new System.Drawing.Point(29, 139);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(10, 34);
-            this.pictureBox10.TabIndex = 7;
-            this.pictureBox10.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(42, 96);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 21);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Check-in Date:";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox9.Location = new System.Drawing.Point(29, 89);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(10, 34);
-            this.pictureBox9.TabIndex = 5;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox8.Location = new System.Drawing.Point(29, 39);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(10, 34);
-            this.pictureBox8.TabIndex = 3;
-            this.pictureBox8.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(42, 46);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 21);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Room Grade:";
-            // 
-            // pnlRooms
-            // 
-            this.pnlRooms.Controls.Add(this.label6);
-            this.pnlRooms.Controls.Add(this.pictureBox8);
-            this.pnlRooms.Controls.Add(this.pictureBox9);
-            this.pnlRooms.Controls.Add(this.label7);
-            this.pnlRooms.Controls.Add(this.pictureBox10);
-            this.pnlRooms.Controls.Add(this.button1);
-            this.pnlRooms.Controls.Add(this.label8);
-            this.pnlRooms.Controls.Add(this.label9);
-            this.pnlRooms.Controls.Add(this.pictureBox11);
-            this.pnlRooms.Controls.Add(this.pictureBox12);
-            this.pnlRooms.Controls.Add(this.label10);
-            this.pnlRooms.Location = new System.Drawing.Point(195, 86);
-            this.pnlRooms.Name = "pnlRooms";
-            this.pnlRooms.Size = new System.Drawing.Size(880, 410);
-            this.pnlRooms.TabIndex = 20;
-            // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1183,42 +1219,36 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlReservations);
-            this.Controls.Add(this.pnlRooms);
             this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlAddonsPromo);
             this.Name = "FrmDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDashboard";
             this.Load += new System.EventHandler(this.FrmDashboard_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
+            this.pnlDashboard.ResumeLayout(false);
+            this.pnlDashboard.PerformLayout();
+            this.pnlRoom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.pnlDashboard.ResumeLayout(false);
-            this.pnlDashboard.PerformLayout();
             this.pnlReservations.ResumeLayout(false);
             this.dialogNoReservations.ResumeLayout(false);
             this.dialogRemainingTime.ResumeLayout(false);
             this.pnlAddonsPromo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgAP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAddon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPromo)).EndInit();
             this.pnlAddons.ResumeLayout(false);
             this.pnlAddons.PerformLayout();
             this.pnlPromos.ResumeLayout(false);
             this.pnlPromos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.pnlRooms.ResumeLayout(false);
-            this.pnlRooms.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1264,8 +1294,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblHours;
         private System.Windows.Forms.Panel pnlAddonsPromo;
-        private System.Windows.Forms.DataGridView dtgAP;
-        private System.Windows.Forms.Button btnSubmitAddons;
+        private System.Windows.Forms.DataGridView dtgAddon;
         private System.Windows.Forms.Button btnAddAddons;
         private System.Windows.Forms.Button btnDeleteAddons;
         private System.Windows.Forms.Button btnEditAddons;
@@ -1290,27 +1319,27 @@
         private System.Windows.Forms.DateTimePicker dtmCheckout;
         private System.Windows.Forms.DateTimePicker dtmCheckin;
         private System.Windows.Forms.ComboBox cmbRoomGrade;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel pnlRooms;
         private System.Windows.Forms.Button btnEditPromos;
         private System.Windows.Forms.Button btnAddPromos;
         private System.Windows.Forms.Button btnDeletePromos;
-        private System.Windows.Forms.Button btnSubmitPromos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ap;
+        private System.Windows.Forms.Button btnSubmitAP;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.DataGridView dtgPromo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn promo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn promo_description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addons;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total_price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addon_description;
+        private System.Windows.Forms.Button btnSeeReservations;
+        private System.Windows.Forms.Label lblTotalDiscount;
+        private System.Windows.Forms.Button btnConfirmReservation;
+        private System.Windows.Forms.Panel pnlRoom;
+        private System.Windows.Forms.Label lblRoomDescription;
+        private System.Windows.Forms.Label lblRoomPrice;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }

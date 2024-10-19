@@ -21,6 +21,13 @@ namespace Prototype
             InitializeComponent();
             gproc = new GlobalProcedures();
         }
+        private void FrmStartUp_Load(object sender, EventArgs e)
+        {
+            gproc.fncDatabaseConnection();
+            pnlAdmin.Visible = false;
+            pnlSignup.Visible = false;
+            dialogUpload.Visible = false;
+        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -44,13 +51,6 @@ namespace Prototype
             btnSignup.BackColor = Color.FromArgb(64, 64, 64);
             btnSignup.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
             btnSignup.ForeColor = Color.White;
-        }
-
-        private void FrmStartUp_Load(object sender, EventArgs e)
-        {
-            gproc.fncDatabaseConnection();
-            pnlSignup.Visible = false;
-            dialogUpload.Visible = false;
         }
 
         private void btnLogin1_Click(object sender, EventArgs e)
@@ -109,6 +109,12 @@ namespace Prototype
 
             pnlLogin.Visible = true;
             pnlSignup.Visible = false;
+            btnLogin.BackColor = Color.FromArgb(64, 64, 64);
+            btnLogin.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            btnLogin.ForeColor = Color.White;
+            btnSignup.BackColor = Color.White;
+            btnSignup.FlatAppearance.BorderColor = Color.White;
+            btnSignup.ForeColor = Color.Black;
         }
 
         public void logIn()
@@ -384,5 +390,18 @@ namespace Prototype
             }
         }
 
+        private void lnkPersonnel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnlAdmin.Visible = true;
+            pnlLogin.Visible = false;
+            pnlSignup.Visible = false;
+        }
+
+        private void lnkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnlLogin.Visible = true;
+            pnlAdmin.Visible = false;
+            pnlSignup.Visible = false;
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace Prototype
     {
         GlobalProcedures gproc;
         private int userID, row;
+        private double total, reduction;
         public FrmDashboard(int userID)
         {
             InitializeComponent();
@@ -26,7 +27,6 @@ namespace Prototype
             gproc.fncDatabaseConnection();
             pnlReservations.Visible = false;
             pnlAddonsPromo.Visible = false;
-            pnlRooms.Visible = false;
             //pnlTenants.Visible = false;
             //pnlPersonnel.Visible = false;
             getAccount();
@@ -100,7 +100,6 @@ namespace Prototype
 
         private void btnRooms_Click(object sender, EventArgs e)
         {
-            pnlRooms.Visible = true;
             pnlDashboard.Visible = false;
             pnlReservations.Visible = false;
             pnlAddonsPromo.Visible = false;
@@ -136,7 +135,6 @@ namespace Prototype
         {
 
             pnlDashboard.Visible = true;
-            pnlRooms.Visible = false;
             pnlReservations.Visible = false;
             pnlAddonsPromo.Visible = false;
             //pnlTenants.Visible = false;
@@ -171,7 +169,6 @@ namespace Prototype
         {
             pnlReservations.Visible = true;
             pnlDashboard.Visible = false;
-            pnlRooms.Visible = false;
             pnlAddonsPromo.Visible = false;
             //pnlTenants.Visible = false;
             //pnlPersonnel.Visible = false;
@@ -205,11 +202,12 @@ namespace Prototype
         {
             pnlAddonsPromo.Visible = true;
             pnlDashboard.Visible = false;
-            pnlRooms.Visible = false;
             pnlReservations.Visible = false;
             //pnlTenants.Visible = false;
             //pnlPersonnel.Visible = false;
             displayAddons();
+            displayOnDataGridAddons();
+            totalPrice();
             resetAP();
 
             btnAddonsPromo.BackColor = Color.FromArgb(64, 64, 64);
@@ -240,10 +238,16 @@ namespace Prototype
         private void btnAddons_Click(object sender, EventArgs e)
         {
             pnlAddons.Visible = true;
+            dtgAddon.Visible = true;
+            lblTotalPrice.Visible = true;
             pnlPromos.Visible = false;
+            dtgPromo.Visible = false;
+            lblTotalDiscount.Visible = false;
             showAddons();
             hidePromos();
+            totalPrice();
             displayAddons();
+            displayOnDataGridAddons();
 
             btnAddons.BackColor = Color.FromArgb(64, 64, 64);
             btnAddons.FlatAppearance.BorderColor = Color.Black;
@@ -257,10 +261,16 @@ namespace Prototype
         private void btnPromos_Click(object sender, EventArgs e)
         {
             pnlPromos.Visible = true;
+            dtgPromo.Visible = true;
+            lblTotalDiscount.Visible = true;
             pnlAddons.Visible = false;
+            dtgAddon.Visible = false;
+            lblTotalPrice.Visible = false;
             showPromos();
             hideAddons();
+            getDiscount();
             displayPromos();
+            displayOnDataGridPromos();
 
             btnPromos.BackColor = Color.FromArgb(64, 64, 64);
             btnPromos.FlatAppearance.BorderColor = Color.Black;
@@ -283,7 +293,6 @@ namespace Prototype
             btnAddAddons.Visible = false;
             btnEditAddons.Visible = false;
             btnDeleteAddons.Visible = false;
-            btnSubmitAddons.Visible = false;
         }
 
         public void showAddons()
@@ -291,7 +300,6 @@ namespace Prototype
             btnAddAddons.Visible = true;
             btnEditAddons.Visible = true;
             btnDeleteAddons.Visible = true;
-            btnSubmitAddons.Visible = true;
         }
 
         public void hidePromos()
@@ -299,7 +307,6 @@ namespace Prototype
             btnAddPromos.Visible = false;
             btnEditPromos.Visible = false;
             btnDeletePromos.Visible = false;
-            btnSubmitPromos.Visible = false;
         }
 
         public void showPromos()
@@ -307,7 +314,6 @@ namespace Prototype
             btnAddPromos.Visible = true;
             btnEditPromos.Visible = true;
             btnDeletePromos.Visible = true;
-            btnSubmitPromos.Visible = true;
         }
 
         public void resetAP()
@@ -366,6 +372,45 @@ namespace Prototype
             }
         }
 
+        public void displayPromos()
+        {
+            try
+            {
+                gproc.sqlHotelAdapter = new MySqlDataAdapter();
+                gproc.datHotel = new DataTable();
+
+                gproc.sqlCommand.Parameters.Clear();
+                gproc.sqlCommand.CommandText = "procGetPromos";
+                gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
+                gproc.sqlCommand.ExecuteNonQuery();
+                gproc.datHotel.Clear();
+                gproc.sqlHotelAdapter.Fill(gproc.datHotel);
+
+                cmbPromo.Items.Clear();
+                if (gproc.datHotel.Rows.Count > 0)
+                {
+                    foreach (DataRow row in gproc.datHotel.Rows)
+                    {
+                        cmbPromo.Items.Add(row["promoName"].ToString());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Record not Found!", "Records", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                gproc.sqlHotelAdapter?.Dispose();
+                gproc.datHotel?.Dispose();
+            }
+        }
+
         private void cmbAddons_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -388,7 +433,6 @@ namespace Prototype
                 }
                 else
                 {
-                    MessageBox.Show("Record not Found!", "Records", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
                 gproc.sqlHotelAdapter.Dispose();
@@ -436,7 +480,111 @@ namespace Prototype
             }
         }
 
-        public void displayPromos()
+        
+
+        private void btnSubmitAddons_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddAddons_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                gproc.sqlCommand.Parameters.Clear();
+                gproc.sqlCommand.CommandText = "procAddAccountAddons";
+                gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                gproc.sqlCommand.Parameters.AddWithValue("@p_accountid", userID);
+                gproc.sqlCommand.Parameters.AddWithValue("@p_addonsid", cmbAddons.SelectedIndex + 1);
+                gproc.sqlCommand.Parameters.AddWithValue("@p_addons_description", lblAddons.Text);
+                gproc.sqlCommand.ExecuteNonQuery();
+
+                totalPrice();
+                displayOnDataGridAddons();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void btnDeleteAddons_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                gproc.sqlCommand.Parameters.Clear();
+                gproc.sqlCommand.CommandText = "procDeleteAccountAddons";
+                gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                gproc.sqlCommand.Parameters.AddWithValue("@p_id", Convert.ToInt32(dtgAddon.CurrentRow.Cells[0].Value));
+                gproc.sqlCommand.ExecuteNonQuery();
+
+                totalPrice();
+                displayOnDataGridAddons();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void btnAddPromos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                gproc.sqlCommand.Parameters.Clear();
+                gproc.sqlCommand.CommandText = "procAddAccountPromo";
+                gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                gproc.sqlCommand.Parameters.AddWithValue("@p_accountid", userID);
+                gproc.sqlCommand.Parameters.AddWithValue("@p_promoid", cmbPromo.SelectedIndex + 1);
+                gproc.sqlCommand.Parameters.AddWithValue("@p_promo_description", lblPromo.Text);
+                gproc.sqlCommand.ExecuteNonQuery();
+
+                getDiscount();
+                displayOnDataGridPromos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void btnDeletePromos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                gproc.sqlCommand.Parameters.Clear();
+                gproc.sqlCommand.CommandText = "procDeleteAccountPromo";
+                gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                gproc.sqlCommand.Parameters.AddWithValue("@p_id", Convert.ToInt32(dtgPromo.CurrentRow.Cells[0].Value));
+                gproc.sqlCommand.ExecuteNonQuery();
+
+                getDiscount();
+                displayOnDataGridPromos();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void btnSubmitAP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                gproc.sqlCommand.Parameters.Clear();
+                gproc.sqlCommand.CommandText = "procAddAddons_Promo";
+                gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                gproc.sqlCommand.Parameters.AddWithValue("@p_accountid", userID);
+                gproc.sqlCommand.Parameters.AddWithValue("@p_addonPrice", total);
+                gproc.sqlCommand.Parameters.AddWithValue("@p_promoDiscount", reduction);
+                gproc.sqlCommand.ExecuteNonQuery();
+
+                MessageBox.Show($"Submitted!", "Submit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public void displayOnDataGridAddons()
         {
             try
             {
@@ -444,33 +592,195 @@ namespace Prototype
                 gproc.datHotel = new DataTable();
 
                 gproc.sqlCommand.Parameters.Clear();
-                gproc.sqlCommand.CommandText = "procGetPromos";
+                gproc.sqlCommand.CommandText = "procGetAccountAddons";
                 gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                gproc.sqlCommand.Parameters.AddWithValue("@p_id", userID);
+
                 gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
-                gproc.sqlCommand.ExecuteNonQuery();
-                gproc.datHotel.Clear();
                 gproc.sqlHotelAdapter.Fill(gproc.datHotel);
+
                 if (gproc.datHotel.Rows.Count > 0)
                 {
-                    row = 0;
-                    while (!(gproc.datHotel.Rows.Count - 1 < row))
+                    dtgAddon.Rows.Clear();
+
+                    foreach (DataRow row in gproc.datHotel.Rows)
                     {
-                        cmbPromo.Items.Add(gproc.datHotel.Rows[row]["promoName"].ToString());
-                        row++;
+                        dtgAddon.Rows.Add(
+                            row["ID"].ToString(),
+                            row["ADDON NAME"].ToString(),
+                            row["ADDON PRICE"].ToString(),
+                            row["DESCRIPTION"].ToString()
+                        );
                     }
+                }
+                else
+                {
+                    totalPrice();
+                    dtgAddon.Rows.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+            finally
+            {
+                gproc.sqlHotelAdapter?.Dispose();
+                gproc.datHotel?.Dispose();
+            }
+        }
+
+        public void displayOnDataGridPromos()
+        {
+            try
+            {
+                gproc.sqlHotelAdapter = new MySqlDataAdapter();
+                gproc.datHotel = new DataTable();
+
+                gproc.sqlCommand.Parameters.Clear();
+                gproc.sqlCommand.CommandText = "procGetAccountPromo";
+                gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                gproc.sqlCommand.Parameters.AddWithValue("@p_id", userID);
+
+                gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
+                gproc.sqlHotelAdapter.Fill(gproc.datHotel);
+
+                if (gproc.datHotel.Rows.Count > 0)
+                {
+                    dtgPromo.Rows.Clear();
+
+                    foreach (DataRow row in gproc.datHotel.Rows)
+                    {
+                        dtgPromo.Rows.Add(
+                            row["ID"].ToString(),
+                            row["PROMO NAME"].ToString(),
+                            row["PROMO DISCOUNT"].ToString(),
+                            row["DESCRIPTION"].ToString()
+                        );
+                    }
+                }
+                else
+                {
+                    dtgPromo.Rows.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+            finally
+            {
+                gproc.sqlHotelAdapter?.Dispose();
+                gproc.datHotel?.Dispose();
+            }
+        }
+
+        private void totalPrice()
+        {
+            try
+            {
+                gproc.sqlHotelAdapter = new MySqlDataAdapter();
+                gproc.datHotel = new DataTable();
+
+                gproc.sqlCommand.Parameters.Clear();
+                gproc.sqlCommand.CommandText = "procTotalAddons";
+                gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                gproc.sqlCommand.Parameters.AddWithValue("@p_id", userID);
+
+                gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
+                gproc.sqlHotelAdapter.Fill(gproc.datHotel);
+
+                if (gproc.datHotel.Rows.Count > 0)
+                {
+                    total = Convert.ToDouble(gproc.datHotel.Rows[0]["TOTAL PRICE"].ToString());
+                    lblTotalPrice.Text = $"Total Price: ₱{total:F2}";
+                }
+                else
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                gproc.sqlHotelAdapter?.Dispose();
+                gproc.datHotel?.Dispose();
+            }
+        }
+
+        private void lblFirstname_Click(object sender, EventArgs e)
+        {
+            new FrmDialogProfile(userID).ShowDialog();
+            getAccount();
+        }
+
+        private void getDiscount()
+        {
+            try
+            {
+                gproc.sqlHotelAdapter = new MySqlDataAdapter();
+                gproc.datHotel = new DataTable();
+
+                gproc.sqlCommand.Parameters.Clear();
+                gproc.sqlCommand.CommandText = "procTotalDiscount";
+                gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                gproc.sqlCommand.Parameters.AddWithValue("@p_id", userID);
+
+                gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
+                gproc.sqlHotelAdapter.Fill(gproc.datHotel);
+
+                if (gproc.datHotel.Rows.Count > 0)
+                {
+                    reduction = Convert.ToDouble(gproc.datHotel.Rows[0]["TOTAL DISCOUNT"].ToString());
+                    lblTotalDiscount.Text = $"Total Discount: {reduction}%";
                 }
                 else
                 {
                     MessageBox.Show("Record not Found!", "Records", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
-                gproc.sqlHotelAdapter.Dispose();
-                gproc.datHotel.Dispose();
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                gproc.sqlHotelAdapter?.Dispose();
+                gproc.datHotel?.Dispose();
+            }
+        }
+
+        private void btnMakeReservation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                gproc.sqlHotelAdapter = new MySqlDataAdapter();
+                gproc.datHotel = new DataTable();
+
+                gproc.sqlCommand.Parameters.Clear();
+                gproc.sqlCommand.CommandText = "procTotalDiscount";
+                gproc.sqlCommand.CommandType = CommandType.StoredProcedure;
+                gproc.sqlCommand.Parameters.AddWithValue("@p_id", userID);
+
+                gproc.sqlHotelAdapter.SelectCommand = gproc.sqlCommand;
+                gproc.sqlHotelAdapter.Fill(gproc.datHotel);
+
+                if (gproc.datHotel.Rows.Count > 0)
+                {
+                }
+                else
+                {
+                    MessageBox.Show("Record not Found!", "Records", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                gproc.sqlHotelAdapter?.Dispose();
+                gproc.datHotel?.Dispose();
             }
         }
 

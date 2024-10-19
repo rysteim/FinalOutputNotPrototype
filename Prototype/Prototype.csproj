@@ -110,6 +110,12 @@
     <Compile Include="FrmDialogProfile.Designer.cs">
       <DependentUpon>FrmDialogProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmStaffDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStaffDashboard.Designer.cs">
+      <DependentUpon>FrmStaffDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmStartUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDialogProfile.resx">
+      <DependentUpon>FrmDialogProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStaffDashboard.resx">
+      <DependentUpon>FrmStaffDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStartUp.resx">
       <DependentUpon>FrmStartUp.cs</DependentUpon>
