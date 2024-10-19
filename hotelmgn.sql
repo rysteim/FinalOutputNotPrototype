@@ -41,7 +41,7 @@ insert  into `tblaccount`(`id`,`username`,`password`,`email`,`address`,`contactN
 (11,'z4ynu','zyot','zyhenzo@gmail.com','Tagum City','09324066029','Zy','Henzo','2003-06-04','Enter your pass','C:\\Users\\jazzy\\Downloads\\5c8b18a1d95fce3c7740bed1a49fd7fd.jpg'),
 (12,'zy','zy','zy','zy','zy','zy','zy','2020-02-26','Enter your pass','C:\\Users\\jazzy\\Downloads\\4d84bb59074bf2df411c9cb7f2f0ff2c.jpg'),
 (13,'Daijiro','mitty','kyrelleaquino@gmail.com','Tagum City','09156855768','Kyrelle Andre','Aquino','2005-11-15','mitty','C:\\Users\\jazzy\\OneDrive\\Pictures\\pfpo.jpg'),
-(14,'kashy','admin','kashtorino@gmail.com','Tagum City','09156855768','Kashmir','Torino','2004-05-14','Enter your pass','C:\\Users\\jazzy\\Downloads\\461330633_496289853331233_6372511773470926964_n.jpg'),
+(14,'kashy','admin','kashtorino@gmail.com','Tagum City','09156855768','Kashmir','Torino','2004-05-14','','C:\\Users\\jazzy\\Downloads\\396532cad95b3bcffcf3159ef34ff3e1.jpg'),
 (15,'eim','1234','kashtorino@gmail.com','Tagum City','09156855768','Kashmir','Torino','2004-05-14','Male','C:\\Users\\jazzy\\Downloads\\396532cad95b3bcffcf3159ef34ff3e1.jpg'),
 (16,'Soggy Cereal','4321','sostino@gmail.com','Mankilam','09123456789','Kyron','Sostino','2003-04-01','Male','C:\\Users\\jazzy\\Downloads\\4d84bb59074bf2df411c9cb7f2f0ff2c.jpg'),
 (17,'Space','kys','kyall@gmail.com','Ky City','09ky','Spacial','Kyron','2024-11-15','Male','C:\\Users\\jazzy\\Downloads\\snowy-mountain-peak-starry-galaxy-majesty-generative-ai.jpg');
@@ -110,7 +110,7 @@ CREATE TABLE `tbladdons` (
   `price` double NOT NULL,
   `description` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `tbladdons` */
 
@@ -120,7 +120,9 @@ insert  into `tbladdons`(`id`,`name`,`price`,`description`) values
 (3,'Extra pillows',10,'Adds a pillow.'),
 (4,'Extra towels',5,'Adds additional towels.'),
 (5,'Pool Access',250,'Grants access to all the pools in the hotel\'s vicinity.'),
-(6,'Gym Access',100,'Grants access to the hotel\'s gym.');
+(6,'Gym Access',100,'Grants access to the hotel\'s gym.'),
+(7,'Extra bathrobes',1500,'Enjoy a plush bathrobe for your comfort while lounging in your room or at the poolside.'),
+(8,'Scented Bath Soap',200,'Indulge in our artisanal scented bath soaps made from natural ingredients, perfect for a soothing bathing experience.');
 
 /*Table structure for table `tbladdons_promo` */
 
@@ -183,9 +185,32 @@ CREATE TABLE `tblhotelroom` (
   `description` varchar(200) NOT NULL,
   `initialPricePerDay` double NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `tblhotelroom` */
+
+insert  into `tblhotelroom`(`id`,`roomName`,`roomGrade`,`roomStatus`,`description`,`initialPricePerDay`) values 
+(1,'D100','Deluxe Room','','Standard luxury room with upscale décor, modern amenities, and often a city or garden view.',4000),
+(2,'D101','Deluxe Room','','Standard luxury room with upscale décor, modern amenities, and often a city or garden view.',4000),
+(3,'D102','Deluxe Room','','Standard luxury room with upscale décor, modern amenities, and often a city or garden view.',4000),
+(4,'D103','Deluxe Room','','Standard luxury room with upscale décor, modern amenities, and often a city or garden view.',4000),
+(5,'P200','Premier Room','','A step up from the Deluxe Room, usually featuring better views and more space.',6500),
+(6,'P201','Premier Room','','A step up from the Deluxe Room, usually featuring better views and more space.',6500),
+(7,'P202','Premier Room','','A step up from the Deluxe Room, usually featuring better views and more space.',6500),
+(8,'P203','Premier Room','','A step up from the Deluxe Room, usually featuring better views and more space.',6500),
+(9,'J300','Junior Suite','','Spacious room with a separate sitting area, but not necessarily a fully divided space. Ideal for guests seeking a bit more comfort.',9000),
+(10,'J301','Junior Suite','','Spacious room with a separate sitting area, but not necessarily a fully divided space. Ideal for guests seeking a bit more comfort.',9000),
+(11,'J302','Junior Suite','','Spacious room with a separate sitting area, but not necessarily a fully divided space. Ideal for guests seeking a bit more comfort.',9000),
+(12,'J303','Junior Suite','','Spacious room with a separate sitting area, but not necessarily a fully divided space. Ideal for guests seeking a bit more comfort.',9000),
+(13,'E400','Executive Suite','','Larger than the Junior Suite with a fully separate living room and bedroom, often used by business travelers or families.',15000),
+(14,'E401','Executive Suite','','Larger than the Junior Suite with a fully separate living room and bedroom, often used by business travelers or families.',15000),
+(15,'E402','Executive Suite','','Larger than the Junior Suite with a fully separate living room and bedroom, often used by business travelers or families.',15000),
+(16,'E403','Executive Suite','','Larger than the Junior Suite with a fully separate living room and bedroom, often used by business travelers or families.',15000),
+(17,'R500','Royal Suite','','The pinnacle of luxury, often with multiple rooms, private dining areas, and sometimes private pools or terraces. This suite is usually reserved for VIP guests.',35000),
+(18,'R501','Royal Suite','','The pinnacle of luxury, often with multiple rooms, private dining areas, and sometimes private pools or terraces. This suite is usually reserved for VIP guests.',35000),
+(19,'R502','Royal Suite','','The pinnacle of luxury, often with multiple rooms, private dining areas, and sometimes private pools or terraces. This suite is usually reserved for VIP guests.',35000),
+(20,'I600','Imperial Suite','','Located on the top two floors, offering the best views and sometimes featuring exclusive facilities like a private terrace or pool.',60000),
+(21,'I700','Imperial Suite','','Located on the top two floors, offering the best views and sometimes featuring exclusive facilities like a private terrace or pool.',60000);
 
 /*Table structure for table `tblpersonnel` */
 
@@ -216,14 +241,20 @@ CREATE TABLE `tblpromo` (
   `dateStart` date NOT NULL,
   `dateExpiry` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `tblpromo` */
 
 insert  into `tblpromo`(`id`,`promoName`,`description`,`percentageDiscount`,`dateStart`,`dateExpiry`) values 
-(1,'Summer Free Pool','Join us this summer and have free access to the hotel\'s pool.',0,'2024-06-01','2024-08-31'),
-(2,'Holiday Christmas Deal','Book 3 nights during the Christmas season and get a discount and a free breakfast for the whole duration of your stay.',20,'2024-12-01','2024-10-31'),
-(3,'Holiday Halloween Deal','Stay 2 nights during the Halloween season and get a hefty discount.',15,'2024-11-01','2024-11-30');
+(1,'Summer Pool Paradise - Summer Season Promo','Join us this summer and have free access to the hotel\'s pool.',0,'2024-06-01','2024-08-31'),
+(2,'Merry Stays & Cozy Nights - Christmas Eve Deal','Book 3 nights during the Christmas season and get a discount and a free breakfast for the whole duration of your stay.',20,'2024-12-01','2024-12-30'),
+(3,'Spooktacular Staycation - Halloween Spooky Deal','Stay 2 nights during the Halloween season and get a hefty discount.',15,'2024-11-01','2024-11-30'),
+(4,'Work Hard, Relax Harder - Labor Day Deal','Celebrate Labor Day by rewarding hard-working guests with a special discounted stay package.',20,'2024-04-27','2024-05-03'),
+(5,'Enchanted Evenings - Valentines Day Deal','Enjoy a cozy-night in with a romantic partner and feel the love with this discount.',20,'2024-02-10','2024-02-17'),
+(6,'Birthday Bliss Staycation - Birthday Deal','Celebrate in style with a luxurious stay and enjoy the discount.',15,'0000-00-00','0000-00-00'),
+(7,'New Year, New Staycation - New Year\'s Eve Deal','Celebrate the start of the year with a relaxing retreat. Enjoy festive decorations, special New Year\'s Eve dining, and a complimentary champagne toast at midnight.',20,'2024-12-31','2025-01-03'),
+(8,'Thankful Family Staycation - Thanksgiving Deal','Give thanks and enjoy a warm and welcoming holiday experience with a special Thanksgiving dinner included with your stay.',15,'2024-11-21','2024-11-30'),
+(9,'Leap into Spring - Spring Season Promo','',0,'0000-00-00','0000-00-00');
 
 /*Table structure for table `tblreservation` */
 
@@ -232,18 +263,24 @@ DROP TABLE IF EXISTS `tblreservation`;
 CREATE TABLE `tblreservation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `accountid` int(11) NOT NULL,
-  `roomGrade` varchar(20) NOT NULL,
+  `roomGrade` varchar(30) NOT NULL,
   `checkInDate` date NOT NULL,
   `checkOutDate` date NOT NULL,
   `totalDays` int(11) NOT NULL,
   `estimatedAmount` double NOT NULL,
-  `reservationStatus` varchar(20) NOT NULL,
+  `reservationStatus` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `accountid` (`accountid`),
   CONSTRAINT `tblreservation_ibfk_1` FOREIGN KEY (`accountid`) REFERENCES `tblaccount` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `tblreservation` */
+
+insert  into `tblreservation`(`id`,`accountid`,`roomGrade`,`checkInDate`,`checkOutDate`,`totalDays`,`estimatedAmount`,`reservationStatus`) values 
+(2,14,'Imperial Suite','2024-11-14','2024-11-16',2,120000,'For Approval'),
+(3,14,'Imperial Suite','2024-11-14','2024-11-16',2,120000,'For Approval'),
+(4,14,'Royal Suite','2024-12-01','2024-12-31',30,1050000,'For Approval'),
+(5,14,'Royal Suite','2025-05-14','2024-10-20',6,210000,'For Approval');
 
 /*Table structure for table `tbltenant` */
 
@@ -518,19 +555,22 @@ DELIMITER ;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `procAddReservation`(p_roomGrade varchar(20),
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `procAddReservation`(p_accountid int,
+						p_roomGrade varchar(30),
 						p_checkInDate date,
 						p_checkOutDate date,
 						p_totalDays int,
 						p_estimatedAmount double)
 BEGIN
-		insert into hotelmgn.tblreservation	(roomGrade,
+		insert into hotelmgn.tblreservation	(accountid,
+							roomGrade,
 							checkInDate,
 							checkOutDate,
 							totalDays,
 							estimatedAmount,
 							reservationStatus)
-						values	(p_roomGrade,
+						values	(p_accountid,
+							p_roomGrade,
 							p_checkInDate,
 							p_checkOutDate,
 							p_totalDays,
@@ -782,6 +822,18 @@ BEGIN
 	END */$$
 DELIMITER ;
 
+/* Procedure structure for procedure `procGetRoomPrice` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `procGetRoomPrice` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `procGetRoomPrice`(p_roomGrade varchar(25))
+BEGIN
+		select initialPricePerDay from tblhotelroom where roomGrade = p_roomGrade;
+	END */$$
+DELIMITER ;
+
 /* Procedure structure for procedure `procSearchAddons` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `procSearchAddons` */;
@@ -791,6 +843,18 @@ DELIMITER $$
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `procSearchAddons`(p_id int)
 BEGIN
 		select * from view_alladdons where id = p_id;
+	END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `procSearchHotelRoom` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `procSearchHotelRoom` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `procSearchHotelRoom`(p_roomGrade varchar(25))
+BEGIN
+		select * from view_allhotelroom where roomGrade = p_roomGrade;
 	END */$$
 DELIMITER ;
 
@@ -1129,12 +1193,12 @@ DROP TABLE IF EXISTS `view_allreservation`;
 /*!50001 CREATE TABLE  `view_allreservation`(
  `id` int(11) ,
  `accountid` int(11) ,
- `roomGrade` varchar(20) ,
+ `roomGrade` varchar(30) ,
  `checkInDate` date ,
  `checkOutDate` date ,
  `totalDays` int(11) ,
  `estimatedAmount` double ,
- `reservationStatus` varchar(20) 
+ `reservationStatus` varchar(50) 
 )*/;
 
 /*Table structure for table `view_alltenant` */
